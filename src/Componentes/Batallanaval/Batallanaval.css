@@ -1,0 +1,185 @@
+/* Estilos generales para Batalla Naval */
+.batalla-naval-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #0b132b;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #6fffe9;
+  text-shadow: 0 0 10px rgba(111, 255, 233, 0.4);
+}
+
+/* Consola de mensajes y temporizador */
+.consola-mensajes {
+  background-color: #1c2541;
+  border: 2px solid #3a506b;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.mensaje-texto {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.timer {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+/* Controles de posicionamiento */
+.controles-posicion {
+  margin-bottom: 20px;
+}
+
+.controles-posicion button, .btn-comenzar, .btn-reiniciar {
+  background-color: #5bc0be;
+  color: #0b132b;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.controles-posicion button:hover, .btn-comenzar:hover, .btn-reiniciar:hover {
+  background-color: #6fffe9;
+  transform: translateY(-2px);
+}
+
+/* Pantalla de Reglas */
+.tarjeta-reglas {
+  background-color: #1c2541;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  border: 2px solid #3a506b;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.tarjeta-reglas h2 {
+  color: #6fffe9;
+  font-size: 1.3rem;
+  margin-top: 0;
+}
+
+.lista-requerimientos, .lista-reglas {
+  text-align: left;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Contenedor de los tableros */
+.pantalla-tableros {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tablero-wrapper {
+  background-color: #1c2541;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #3a506b;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tablero-wrapper.activo {
+  border-color: #6fffe9;
+  box-shadow: 0 0 15px rgba(111, 255, 233, 0.3);
+}
+
+.tablero-wrapper.inactivo {
+  opacity: 0.7;
+}
+
+.tablero-wrapper h3 {
+  margin-top: 0;
+  color: #5bc0be;
+}
+
+/* Cuadrícula (Grid) 6x6 */
+.grid-naval {
+  display: grid;
+  grid-template-columns: 30px repeat(6, 40px);
+  grid-template-rows: 30px repeat(6, 40px);
+  gap: 3px;
+  background-color: #0b132b;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.esquina, .indice-num, .indice-letra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #8d99ae;
+}
+
+/* Celdas del tablero */
+.celda {
+  background-color: #243447;
+  border: 1px solid #3a506b;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  padding: 0;
+}
+
+.celda:hover:not(:disabled) {
+  background-color: #324a5f;
+}
+
+.celda:disabled {
+  cursor: not-allowed;
+}
+
+/* Estados de las celdas */
+.barco-visible {
+  background-color: #4a5568 !important;
+  border-color: #718096;
+}
+
+.celda-agua {
+  background-color: #1d3557 !important;
+  border-color: #457b9d;
+}
+
+.celda-agua::after {
+  content: '💧';
+  font-size: 0.8rem;
+}
+
+.celda-impacto {
+  background-color: #e63946 !important;
+  border-color: #f77f00;
+}
+
+.celda-impacto::after {
+  content: '💥';
+  font-size: 0.8rem;
+}
